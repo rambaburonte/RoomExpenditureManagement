@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class RoomController {
 	@GetMapping
 	public String home() {
-		return "welcome";
+		return "home";
 	}
 	
 }
