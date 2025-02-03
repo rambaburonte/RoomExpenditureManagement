@@ -21,12 +21,13 @@ public class RoomController {
 	public String login() {
 		return "login";
 	}
+	
 	@PostMapping("/loginServlet")
-	public String loginServlet(@ModelAttribute("person") Person person ) {
+	public String loginServlet(@ModelAttribute Person person ) {
 		
 			Integer uid=person.getId();
 			Long pss=person.getPhone();
-			return"login_suesss";
+		return"login_suesss";
 		
 	}
 }
