@@ -1,5 +1,8 @@
 package com.tk.Service;
 
-public class RommServiceMng {
+import org.springframework.stereotype.Service;
+
+@Service
+public class RommServiceMng implements IRoomServiceMngImpl {
 
 }
