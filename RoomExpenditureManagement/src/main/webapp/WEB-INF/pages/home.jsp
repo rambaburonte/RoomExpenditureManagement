@@ -117,11 +117,11 @@ footer marquee {
 
 <!-- Navigation Bar -->
 <nav>
-    <a href="index.jsp">Home</a>
-    <a href="about.jsp">About</a>
-    <a href="services.jsp">Services</a>
+    <a href="./">Home</a>
+    <a href="about">About</a>
+    <a href="services">Services</a>
     <a href="reports.jsp">Reports</a>
-    <a href="contact.jsp">Contact</a>
+    <a href="contact">Contact</a>
 </nav>
 
 <!-- Main Content -->

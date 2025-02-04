@@ -149,7 +149,7 @@
     <!-- Login Form Container -->
     <div class="container">
         <h2>User Login</h2>
-        <form action="loginServlet" method="post">
+        <form action="logint" method="post">
             <label for="username">Username or Email</label>
             <input type="text" name="username" id="username" placeholder="Enter your username" required>
             

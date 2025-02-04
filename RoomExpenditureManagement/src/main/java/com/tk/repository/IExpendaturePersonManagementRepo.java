@@ -6,4 +6,6 @@ import com.tk.entity.Person;
 
 public interface IExpendaturePersonManagementRepo extends JpaRepository<Person,Integer> {
 
+		public 	Person findByEmail(String usernameOrEmail);
+
 }
