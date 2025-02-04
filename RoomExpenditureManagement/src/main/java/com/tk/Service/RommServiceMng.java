@@ -1,8 +1,11 @@
 package com.tk.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tk.entity.Person;
 import com.tk.repository.IExpendaturePersonManagementRepo;
 
 @Service
@@ -29,6 +32,23 @@ public class RommServiceMng implements IRoomServiceMngImpl {
 	                Collections.singleton(authority) // Granted authorities for role-based access
 	        );
 	    }*/
+	@Override
+	public Person loginCheck(Integer uid, String password) {
+	    Optional<Person> obj = personRepository.findById(uid);
+	    if (obj.isPresent()) {
+	        Person p = obj.get();
+	        // Use equals() to compare strings instead of '=='
+	        if (p.getPassword().equals(password)) {
+	            return p;
+	        } else {
+	            throw new IllegalArgumentException("Invalid password");
+	        }
+	    } else {
+	        throw new IllegalArgumentException("User not found with id: " + uid);
+	    }
 	}
+
+	
+}
 
 

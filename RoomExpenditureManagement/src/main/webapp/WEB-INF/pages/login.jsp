@@ -149,7 +149,7 @@
     <!-- Login Form Container -->
     <div class="container">
         <h2>User Login</h2>
-        <form action="logint" method="post">
+        <form action="login" method="post">
             <label for="username">Username or Email</label>
             <input type="text" name="username" id="username" placeholder="Enter your username" required>
             
@@ -166,6 +166,7 @@
         <div class="extra-links">
             <p>Don't have an account? <a href="register.jsp">Register here</a></p>
         </div>
+        <span>${error }</span>
     </div>
     
     <!-- Footer Section -->

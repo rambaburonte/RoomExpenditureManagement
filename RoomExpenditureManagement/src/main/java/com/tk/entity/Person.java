@@ -49,6 +49,8 @@ public class Person {
     
     private String role;
     
+    private String profilepric;
+    
     private String password;
 
     @OneToMany(mappedBy = "pid", cascade = CascadeType.ALL, fetch = FetchType.LAZY) // Explicitly defining lazy loading
