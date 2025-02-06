@@ -137,6 +137,9 @@
             color: yellow;
             font-size: 16px;
         }
+        #errorMsg{
+        	color: rgb(135, 64, 194);
+        }
     </style>
 </head>
 <body>
@@ -166,7 +169,7 @@
         <div class="extra-links">
             <p>Don't have an account? <a href="register.jsp">Register here</a></p>
         </div>
-        <span>${error }</span>
+        <span id="errorMsg">${error }</span>
     </div>
     
     <!-- Footer Section -->

@@ -8,4 +8,5 @@ public interface IExpendaturePersonManagementRepo extends JpaRepository<Person,I
 
 		public 	Person findByEmail(String usernameOrEmail);
 
+
 }

@@ -1,5 +1,7 @@
 package com.tk.Service;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,38 @@ public class RommServiceMng implements IRoomServiceMngImpl {
 	        throw new IllegalArgumentException("User not found with id: " + uid);
 	    }
 	}
-
+	@Override
+	public List<Person> allRecords() {
+		List<Person> p= 	personRepository.findAll();
+		p.forEach(person -> person.setExpenses(null));
+		return p;	
+	}
+	@Override
+	public Person getPersonById(Integer id) {
+	Optional<Person> opt=	personRepository.findById(id);
+		if(opt.isPresent()) {
+			return opt.get();
+		}
+		throw new IllegalArgumentException("Invalid Id " + id);
+	}
+	@Override
+	public String deleteById(Integer no) {
+		personRepository.deleteById(no);
+		return "record deleted With " + no;
+	}
+	@Override
+	public Boolean updateUser(Person p) {
+	Person p1=	personRepository.save(p);
+	if(Objects.equals(p, p1)) {
+		return false;
+	}
+		return true;
+	}
+	@Override
+	public Integer addPerson(Person p) {
+	return	personRepository.save(p).getId();
+		
+	}
 	
 }
 

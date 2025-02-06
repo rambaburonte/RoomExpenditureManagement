@@ -1,6 +1,13 @@
 package com.tk.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 
 @Data
@@ -21,7 +28,8 @@ public class Expenses {
 
     private String store;
     private Double total;
-
+ 
+   
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "person_id") // Consistent column naming
     private Person pid;
