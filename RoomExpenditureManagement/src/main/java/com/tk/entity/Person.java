@@ -37,9 +37,7 @@ public class Person {
     @Column(name = "person_email", length = 30, unique = true, nullable = false)
     private String email;
 
-    @Column(name = "current_month", length = 20)
-    private Integer currentMonth; // Consider using String or java.time.Month
-
+   
     @Column(name = "invest_money", length = 20)
     private Double totalMoney;
 

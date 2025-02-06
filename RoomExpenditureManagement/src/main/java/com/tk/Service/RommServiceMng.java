@@ -81,6 +81,15 @@ public class RommServiceMng implements IRoomServiceMngImpl {
 	return	personRepository.save(p).getId();
 		
 	}
+	@Override
+	public Double getAllpayments() {
+		List<Double> dList= personRepository.findAllCurrentMonthPayments();
+		Double total =0.0d;
+		for(Double d : dList  )  
+			total = total + d;
+		return total;
+		
+	}
 	
 }
 

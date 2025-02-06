@@ -141,6 +141,20 @@ public class RoomController {
 		
 		return "editProfile";
 	}
+	
+
+
+
+
+
+
+
+	@GetMapping("/allPayments")
+	public String allpayments() {
+		
+	}
+
+
 
 }
 

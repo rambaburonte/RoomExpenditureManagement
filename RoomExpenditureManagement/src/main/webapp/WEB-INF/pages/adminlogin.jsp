@@ -138,7 +138,7 @@
     <a href="getAll">Manage Persons</a>
     <a href="viewExpenses">View Expenses</a>
     <a href="addExpense">Add Expense</a>
-    <a href="addPerson">Payments</a>
+    <a href="allPayments">Payments</a>
     <a href="reports">Reports</a>
   </div>
   

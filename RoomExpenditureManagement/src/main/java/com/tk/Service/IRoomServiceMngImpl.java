@@ -12,5 +12,6 @@ public interface IRoomServiceMngImpl {
 	public String deleteById(Integer no);
 	public Boolean updateUser(Person p);
 	public Integer addPerson(Person p);
+	public Double getAllpayments();
 
 }
