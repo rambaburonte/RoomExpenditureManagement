@@ -146,7 +146,7 @@
   <div class="main-content">
     <header>
       <h1>Manage All Persons</h1>
-      <div class="profile"><p><a href="editPerson?no=${sessionScope.person.id}">
+      <div class="profile"><p><a href="editProfile">
 
 
         <img src="${imgPath}" alt="Admin Profile"></a></p>

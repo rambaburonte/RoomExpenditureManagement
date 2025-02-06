@@ -133,8 +133,14 @@ public class RoomController {
 		return "redirect:getAll";
 		
 	}
+	@GetMapping("/editProfile")
 	
-	public String 
+	public String editProfile(){
+		if(isLogin() == false)
+			return "redirect:login";
+		
+		return "editProfile";
+	}
 
 }
 
