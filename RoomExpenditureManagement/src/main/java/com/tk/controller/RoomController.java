@@ -150,8 +150,15 @@ public class RoomController {
 
 
 	@GetMapping("/allPayments")
-	public String allpayments() {
-		
+	public String allpayments(Map<String,Object> map) {
+		if(isLogin() == false)
+			return "redirect:login";
+	Double total=	service.getAllpayments();
+	List<Person>plist=service.allRecords();
+	map.put("total", total);
+	map.put("pList", plist);
+	return "allPayments";
+	
 	}
 
 
