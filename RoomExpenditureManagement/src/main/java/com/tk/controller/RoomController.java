@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tk.Service.IRoomServiceMngImpl;
+import com.tk.Service.ISeviceExpensesMng;
 import com.tk.dto.UserDto;
+import com.tk.entity.Expenses;
 import com.tk.entity.Person;
 
 import jakarta.servlet.http.HttpSession;
@@ -23,6 +25,8 @@ public class RoomController {
 	private IRoomServiceMngImpl service;
 	@Autowired
 	 private HttpSession session;
+	@Autowired
+	private ISeviceExpensesMng expsrv;
 	
 	@GetMapping
 	public String home() {
@@ -44,20 +48,19 @@ public class RoomController {
 	public String login(@ModelAttribute UserDto loginDto , Map<String,Object> model) {
 		
 		try {
-	        // Extract username and password from the DTO
+	        
 	        Integer username = loginDto.getUsername();
 	        String password = loginDto.getPassword();
 	        
-	        // Call your login service to validate credentials
 	        Person persons = service.loginCheck(username, password);
 	        
-	        // On success, store relevant user details in the session
+	        
 	        session.setAttribute("person", persons);
 	        // Redirect to dashboard or role-specific page
 	        
 	        return "redirect:getAll";
 	    } catch (IllegalArgumentException ex) {
-	        // On failure, add the error message to the model and return to the login view
+	        
 	        model.put("error", ex.getMessage());
 	        return "login";
 	    }
@@ -133,8 +136,13 @@ public class RoomController {
 		return "redirect:getAll";
 		
 	}
-	
-	public String 
+	@GetMapping("/viewExpenses")
+	public String view_Expences(@ModelAttribute("exp")Expenses ex,Map<String,Object>map) {
+	List<Expenses>list=expsrv.findAllExpenses();
+	System.out.println(list);
+	map.put("rs_list", list);
+		return "view_Expen";
+	}
 
 }
 
