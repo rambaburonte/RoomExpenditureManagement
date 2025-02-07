@@ -20,5 +20,10 @@ public class ExpensesService implements ISeviceExpensesMng{
 		l.forEach(exp->exp.setPid(null));
 		return l ;
 	}
+	@Override
+	public String addExpenses(Expenses exp) {
+		Expenses ad=exrepo.save(exp);
+		return "Expenses Added Successfully with The Price "+ad.getPrice()+"  " +ad.getName();
+	}
 
 }

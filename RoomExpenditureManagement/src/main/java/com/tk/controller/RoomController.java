@@ -136,12 +136,23 @@ public class RoomController {
 		return "redirect:getAll";
 		
 	}
+	
+	//Expenses Controller
 	@GetMapping("/viewExpenses")
 	public String view_Expences(@ModelAttribute("exp")Expenses ex,Map<String,Object>map) {
 	List<Expenses>list=expsrv.findAllExpenses();
 	System.out.println(list);
 	map.put("rs_list", list);
 		return "view_Expen";
+	}
+	@GetMapping("/addExpense")
+	public String addExpeses_form(@ModelAttribute("exp")Expenses exp) {
+		return "addExpForm";
+	}
+	@PostMapping("/addExpenses")
+	public String addExpenses(@ModelAttribute("exp")Expenses exp,RedirectAttributes rda) {
+		String msg=expsrv.addExpenses(exp);
+		return "redirect:/addExpenses";
 	}
 
 }

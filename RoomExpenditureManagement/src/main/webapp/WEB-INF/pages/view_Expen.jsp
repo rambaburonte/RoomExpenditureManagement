@@ -157,7 +157,7 @@
         </c:otherwise>
     </c:choose>
 </div>
-<br><br><br><br><br><br><br>
+<br><br><br>
 <footer>
     &copy; 2025 Expense Manager | Designed by CrickecoderAnil
 </footer>
