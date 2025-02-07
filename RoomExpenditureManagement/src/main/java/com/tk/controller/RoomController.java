@@ -167,6 +167,8 @@ public class RoomController {
 
 	@GetMapping("/viewExpenses")
 	public String view_Expences(@ModelAttribute("exp")Expenses ex,Map<String,Object>map) {
+		if(isLogin() == false)
+			return "redirect:login";
 	List<Expenses>list=expsrv.findAllExpenses();
 	System.out.println(list);
 	map.put("rs_list", list);

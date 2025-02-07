@@ -137,6 +137,7 @@
     <h2>Admin Dashboard</h2>
     <a href="getAll">Manage Persons</a>
     <a href="viewExpenses">View Expenses</a>
+    <a href="#">View Your Expenses</a>
     <a href="addExpense">Add Expense</a>
     <a href="allPayments">Payments</a>
     <a href="reports">Reports</a>
