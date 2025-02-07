@@ -8,4 +8,5 @@ public interface ISeviceExpensesMng {
 
 	
 	public List<Expenses> findAllExpenses();
+	public String addExpenses(Expenses exp);
 }
