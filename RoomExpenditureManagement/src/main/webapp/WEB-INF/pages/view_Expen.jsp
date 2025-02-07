@@ -19,7 +19,7 @@
         
         /* Header */
         header {
-            background: linear-gradient(90deg, #007bff, #004494);
+            background: rgb(27, 114, 167);
             color: white;
             padding: 20px;
             text-align: center;
@@ -32,7 +32,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background: #0056b3;
+            background: rgb(27, 114, 167);
             padding: 12px 0;
         }
         nav a {
@@ -44,7 +44,7 @@
             transition: 0.3s;
         }
         nav a:hover {
-            background: #004494;
+            background: rgb(167, 64, 27);
             border-radius: 5px;
         }
         
@@ -88,7 +88,7 @@
         
         /* Footer */
         footer {
-            background: linear-gradient(90deg, #007bff, #004494);
+            background: rgb(27, 114, 167);
             color: white;
             text-align: center;
             padding: 15px;
@@ -119,7 +119,7 @@
                     <th>Quantity</th>
                     <th>Invoice</th>
                     <th>Store</th>
-                    <th>Total</th>
+                    
                     <th>PID</th>
                     <c:if test="${userRole == 'user'}">
                         <th>Actions</th>
@@ -133,7 +133,7 @@
                         <td>${ rs.quantity }</td>
                         <td>${ rs.invoice }</td>
                         <td>${ rs.store }</td>
-                        <td>${ rs.total }</td>
+                        
                         <td>${ rs.pid }</td>
                         <c:if test="${userRole == 'user'}">
                             <td>
@@ -142,6 +142,13 @@
                             </td>
                         </c:if>
                     </tr>
+                   <c:set var="total" value="0"/>
+					<tr><th>Total</th>
+					    <td><c:forEach var="tl" items="${rs_list}">
+					        <c:set var="total" value="${total + tl.price}" />
+					        ${total}
+					    </c:forEach></td>
+					</tr>
                 </c:forEach>
             </table>
         </c:when>
